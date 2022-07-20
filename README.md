@@ -27,4 +27,4 @@ Install the following items if you do not have them already installed on your ma
  - 6) To release bundle .aab use `cordova build android --release`
  
  ## More Details:
-  ![View Apache License, Version 2.0.](http://www.apache.org/licenses/LICENSE-2.0) or ![contact developer](https://taswerat.com/contact.php)
+  [View Apache License, Version 2.0.](http://www.apache.org/licenses/LICENSE-2.0) or [contact developer](https://taswerat.com/contact.php)
