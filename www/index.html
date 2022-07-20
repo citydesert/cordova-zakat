@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--تم تطويره بواسطة سر الصحراء meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"-->
+		<meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>الزكاة</title>
+    </head>
+    <body dir="rtl">
+		<script>
+		var SUBSCRIBE='https://egypt.do.am/APK/subscribe.html';
+		</script>
+		<div id="loading"><center><img src="img/logo.png" style="width:220px;"><br><img style="width:33px;" src="img/loading.gif"></center></div>
+		<div id="ADSFIXEDBOTTOM"></div>
+    
+	<div class="page fadeout" id="home">
+		<img style="position:absolute;left:0px;top:0px;z-index:-1;height:100vh;width:100%;" src="img/logo.png">
+		<h2><span>الزكاة </span><img style="position:absolute;right:2px;" src="img/i.png" onclick="window.location='#about'"><img style="position:absolute;left:36px;" src="img/cog.png" onclick="window.location='#settings'"><img style="position:absolute;left:2px;" onclick="desert.confirmExit()" src="img/exit.png"></h2>
+		<div style="position:absolute;bottom:5%;left:0px;width:100%;">
+		<div id="zakatMal" onclick="window.location='#zakatMalpage'" class="icon">زكاة المال</div>
+		<div id="zakatFitr" onclick="window.location='#zakatFitrpage'" class="icon">زكاة الفطر</div>
+		<div id="zakatzar3" onclick="window.location='#zakatZar3page'" class="icon">زكاة الزروع</div>
+		<div id="zakatTgara" onclick="window.location='#zakatTgarapage'" class="icon">زكاة التجارة</div>
+		<br>
+		<span id="lastUpdate" style="font-size:14px;color:blue;text-align:center;">لم يتم تحديث اسعار الذهب قط</span>
+		</div>
+    </div>
+	<div class="page fadeout" id="zakatFitrpage">
+		<h2><span>زكاة الفطر </span><img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"></h2>
+		<div class="container">
+		<h3>زكاة الفطر المقدرة لشهر رمضان عام <span id="year">1442</span><br> عن الفرد الواحد تبدأ من <span id="fitrOne">15</span> <span class="currency">جنيه</span></h3>
+		<form method="get" action="" id="zakatFitrForm" onsubmit="desert.calculateFitr()">
+		<fieldset style="border-radius:10px;">
+		<legend>عدد أفراد الأسرة</legend>
+		<input class="input" name="zakatFitrinput" id="zakatFitrinput" min="1" placeholder="10 افراد" type="number" >
+		<br><button onclick="desert.calculateFitr()">الزكاة المستحقة</button>
+		</fieldset>
+		</form>
+		<div id="fitrResult"></div>
+		<fieldset style="border-radius:10px;">
+		<legend>الشروط</legend>
+		<div>زكاة الفطر هى فريضة على كل مسلم ومسلمة ، فيجب على ولى أمر الأسرة اخراج زكاة الفطر عن كل شخص يعوله  حتى الجنين ببطن أمه يجب اخراج الزكاة عنه.<br><button onclick="window.location='#aboutFitr'">تعلم المزيد...</button></div>
+		</fieldset>
+		</div>
+    </div>
+	
+	
+	<div class="page fadeout" id="zakatZar3page">
+		<h2><span>زكاة الزروع </span><img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"></h2>
+		<div class="container">
+			<h3 style="font-size:10px;font-weight:normal;">الزكاة على الزرع تجيب اذا بلغ خراج الأرض النصاب<br> وهو خمسة اوسق او 50 كيلة مصرية او 653 كجم تقريباً</h3>
+			<form method="post" action="" id="zakatzar3Form" onsubmit="desert.calculateZar3(this)">
+			<fieldset style="border-radius:10px;" id="zakatzar3FormF">
+			<legend>تفاصيل المحصول</legend>
+				<fieldset style="border-radius:5px;">
+				<legend>وزن المحصول بالكيلو جرام</legend>
+				<input class="input" name="zakatzar3inputkg" id="zakatzar3inputkg" min="0" placeholder="1000 كيلو" type="number" >
+				</fieldset>
+				
+				<fieldset style="border-radius:5px;">
+				<legend>طريقة الري</legend>
+				<label>بالماكينة: <input name="zakatzar3inputrai" value="mkna" checked="true" type="radio" ></label>
+				<label>بدون ماكينة: <input name="zakatzar3inputrai" value="mtr" type="radio" ></label>
+				</fieldset>
+				
+				<fieldset style="border-radius:5px;">
+				<legend>نوع المحصول</legend>
+				<label>ثمار للتخزين: <input name="zakatzar3inputkind" id="zakatzar3inputkind" value="storeable" checked="true" type="radio" ></label>
+				<label>غير قابلة للتخزين: <input name="zakatzar3inputkind" id="zakatzar3inputkind" value="unstoreable" type="radio" ></label>
+				</fieldset>
+			<br><button>الزكاة المستحقة</button>
+			</fieldset>
+			</form>
+			<div id="zar3Result"></div>
+			<fieldset style="border-radius:10px;" id="zar3conditions">
+			<legend>الشروط</legend>
+			<ol class="text"><li>أن يكون من الأصناف التي تجب فيها الزكاة، فمن الحبوب: (القمح، والشعير، والذرة، والأرز، وكل ما يقتات ويدخر)، ومن الثمار: (التمر والزبيب)، وذهب الحنفية إلى وجوب الزكاة في كل ما يخرج من الأرض.</li><li>أن يبلغ النصاب، وهو خمسة أوسق، كما جاء في الحديث: «لَيْسَ فِيما دُونَ خَمْسَةِ أوْسُقٍ صَدَقَةٌ» والخمسة أوسق تساوي 653 كجم تقريبًا، وبالكيل 50 كيلة مصرية.</li></ol>
+			<div>  <button onclick="window.location='#aboutZar3'">تعلم المزيد...</button></div>
+			</fieldset>
+		</div>	
+    </div>
+	
+	<div class="page fadeout" id="zakatMalpage">
+		<h2><span>زكاة المال </span><img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"></h2>
+		<div class="container">
+			<form method="post" action="#zakatMalpage" id="zakatmalForm" onsubmit="desert.calculateMal(this);">
+			<fieldset style="border-radius:10px;" id="zakatmalFormF">
+			<legend>تفاصيل الأموال</legend>
+				<fieldset style="border-radius:5px;">
+				<legend>المال النقدى المدخر بالجنيه</legend>
+				<input class="input" name="zakatmalinputmoney" id="zakatmalinputmoney" min="0" placeholder="0 جنيه" type="number" >
+				<p style="font-size:10px;color:red;line-height:11px;">قم بادخال القيمة وذلك بعد طرح ما عليك من ديون وأقساط مطالب بسدادها خلال العام وأيضاً بعد اضافة ما لك من ديون خارجية ومتأكد ان المدين سيسددها لك</p>
+				</fieldset>
+				
+				<fieldset style="border-radius:5px;">
+				<legend>حساب بنكى جارى او توفير بالجنيه</legend>
+				<input class="input" name="zakatmalinputgary" id="zakatmalinputgary" min="0" placeholder="0 جنيه" type="number" >
+				</fieldset>
+				<fieldset style="border-radius:5px;">
+				<legend>ذهب لغرض غير الزينة بالجرام</legend>
+				<label class="input">عيار 18: <input class="inlabel" name="zakatmalinputgold18" id="zakatmalinputgold" min="0" placeholder="0 جرام" type="number" ></label><br>
+				<label class="input">عيار 21: <input class="inlabel" name="zakatmalinputgold21" id="zakatmalinputgold" min="0" placeholder="0 جرام" type="number" ></label><br>
+				<label class="input">عيار 24: <input class="inlabel" name="zakatmalinputgold24" id="zakatmalinputgold" min="0" placeholder="0 جرام" type="number" ></label>
+				</fieldset>
+				
+				<fieldset style="border-radius:5px;">
+				<legend>الودائع والشهادات بالجنيه</legend>
+				<input class="input" name="zakatmalinputstores" id="zakatmalinputstores" min="0" placeholder="50000 جنيه" type="number" ><br>
+				<label>أنفق من العائد: <input name="zakatmalinputenfaq" value="unfiq" checked="true" type="radio" ></label>
+				<label>لا انفق من العائد: <input name="zakatmalinputenfaq" value="launfiq" type="radio" ></label><br>
+				<label class="input">العائد سنوياً:<input class="inlabel" name="zakatmalinputyearlysav" id="zakatmalinputyearlysav" min="0" placeholder="0 جنيه" type="number" ><label>
+				<p style="font-size:10px;color:red;line-height:11px;">قم بادخال قيمة العائد السنوى اذا كان قد مر عام على اصدار الشهادة او انه تم احتساب هذه الفائدة وليست فائدة منتظره</p>
+				</fieldset>
+			<br><button>الزكاة المستحقة</button>
+			</fieldset>
+			
+			</form>
+			<div id="MalResult"></div>
+			<fieldset style="border-radius:10px;" id="zar3conditions">
+			<legend>الشروط</legend>
+			<ol class="text"><li>أن يمر على المال عام هجرى كامل.</li><li>أن يبلغ النصاب أي اكثر من 85 جرام ذهب عيار 21.</li></ol>
+			<div>  <button onclick="window.location='#aboutMal'">تعلم المزيد...</button></div>
+			</fieldset>
+		</div>	
+    </div>
+	<!-- زكاة التجارة بداية -->
+		<div class="page fadeout" id="zakatTgarapage">
+		<h2><span>زكاة التجارة </span><img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"></h2>
+		<div class="container">
+			<form method="post" action="#zakatTgarapage" id="zakattgaraForm" onsubmit="desert.calculateTgara(this)">
+			<fieldset style="border-radius:10px;" id="zakattgaraFormF">
+			<legend>تفاصيل الأصناف</legend>
+				<fieldset style="border-radius:5px;">
+				<legend>قيمة البضائع المعدة للتجارة</legend>
+				<input class="input" name="zakattgarainputmoney" min="0" placeholder="5000 جنيه" type="number" >
+				<p style="font-size:10px;color:red;line-height:11px;">قم بادخال القيمة وذلك بعد طرح ما عليك من ديون وأقساط على التجارة مطالب بسدادها خلال العام وأيضاً بعد اضافة ما لك من ديون خارجية ومتأكد ان المدين سيسددها لك</p>
+				</fieldset>
+				
+				
+				<fieldset style="border-radius:5px;">
+				<legend>الأراضي والعقارات المخصصين للبيع</legend>
+				<input class="input" name="zakattgarainputaradi" min="0" placeholder="150000 جنيه" type="number" >
+				<p style="font-size:10px;color:red;line-height:11px;">ادخل قيمة الأرض أو المبنى نفسه ، وان كانت الارض او المبنى مؤجر للغير ولا توجد نية لبيعه او انك تسكنه فلا زكاة على قيمته</p>
+				</fieldset>
+				<fieldset style="border-radius:5px;">
+				<legend>الأراضي والعقارات المخصصين للايجار</legend>
+				<input class="input" name="zakattgarainputaradiigar" min="0" placeholder="150000 جنيه" type="number" >
+				<p style="font-size:10px;color:red;line-height:11px;">ادخل قيمة الإيجار المتبقي خلال العام الماضي</p>
+				</fieldset>
+				
+				
+			<br><button>الزكاة المستحقة</button>
+			</fieldset>
+			
+			</form>
+			<div id="TgaraResult"></div>
+			<fieldset style="border-radius:10px;" id="zar3conditions">
+			<legend>الشروط</legend>
+			<ol class="text"><li>أن يمر على المال عام هجرى كامل.</li><li>أن يبلغ النصاب أي اكثر من 85 جرام ذهب عيار 21.</li><li>زكاة عروض التجارة هى جزءاً من زكاة المال.</li></ol>
+			<div>  <button onclick="window.location='#aboutTjara'">تعلم المزيد...</button></div>
+			</fieldset>
+		</div>	
+    </div>
+	
+		<!-- الإعدادات -->
+		<div class="page fadeout" id="settings">
+		<h2><span>الإعدادات </span><img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"></h2>
+		<div class="container">
+			<form method="get" action="" id="settingsForm" onsubmit="desert.settingsSet(this)">
+			<fieldset style="border-radius:10px;">
+			<legend>سعر الذهب اليوم</legend>
+				<p style="font-size:10px;color:red;line-height:11px;">فى الطبيعي يتم تحديث الاسعار اتوماتيكياً ولكن لتجنب الخطأ او السهو يرجى ادخال سعر الذهب بمنطقتك لتجنب الخطأ البرمجى</p>
+				<fieldset style="border-radius:5px;">
+				<legend>عيار 18</legend>
+				<input class="input" name="zhb18" min="0" placeholder="0000" type="number" />
+				</fieldset>
+				<fieldset style="border-radius:5px;">
+				<legend>عيار 21</legend>
+				<input class="input" name="zhb21" min="0" placeholder="0000" type="number" />
+				</fieldset>
+				<fieldset style="border-radius:5px;">
+				<legend>عيار 24</legend>
+				<input class="input" name="zhb24" min="0" placeholder="0000" type="number" />		
+				</fieldset>		
+			</fieldset>
+			
+			<fieldset style="border-radius:10px;">
+			<legend>القيمة المادية لصاع الحبوب</legend>
+				<p style="font-size:10px;color:red;line-height:11px;">فى الطبيعي يتم التحديث اتوماتيكياً وذلك وفقاً لما تنشره دار الافتاء المصرية ، ولكن لعدم ثقتى بالسيرفرات ومدى فعالية التحديثات الاتوماتيكية، يرجي مراجعة تصريحات دار الافتاء</p>			
+				<input class="input" name="nsab" min="0" placeholder="0000" type="number" />
+			</fieldset>
+			<div id="setResult"></div>
+			<button>حفظ</button>
+			</form>
+		</div>	
+    </div>
+	<!-- نهاية الاعدادات -->
+	
+	<div class="page fadeout" id="about">
+		<h2><span>حول </span><img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"></h2>
+		<div class="container">
+			<div>بسم الله الرحمن الرحيم<br>الزكاة فى الاسلام هى الركن الثالث من اركان الدين فهو الركن الذي يلي الصلاة مباشرة، لذا فهى فريضة فرضها الله على كل مسلم قادر( زكاة مال ، فطر، زروع) وايضاً غير القادر (زكاة الفطر).</div>
+			<button onclick="window.location='#aboutFitr'"> زكاة الفطر </button>
+			<button onclick="window.location='#aboutZar3'"> زكاة الزروع </button>
+			<button onclick="window.location='#aboutMal'"> زكاة المال </button>
+			<button onclick="window.location='#aboutTjara'"> زكاة التجارة </button>
+			<!--br>
+			<button onclick="window.open(SUBSCRIBE,'_system')"> تابعنا عبر يوتيوب </button>
+			<button onclick="window.open(https://play.google.com/store/apps/dev?id=7891920535007923434,'_system')"> المزيد من التطبيقات </button-->
+		</div>	
+    </div>
+	
+	<div class="page fadeout" id="aboutZar3">
+		<h2 id="aboutTitle">زكاة الزروع <img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"><img style="position:absolute;right:2px;" onclick="window.location='#home'" src="img/home.png"></h2>
+		<div class="container">
+		<div class="text"> مركز الأزهر العالمى للفتوى الإلكترونية: إن زكاة الزروع لها أحكام وضوابط من جملتها:
+			<ol><li>أن يكون من الأصناف التي تجب فيها الزكاة، فمن الحبوب: (القمح، والشعير، والذرة، والأرز، وكل ما يقتات ويدخر)، ومن الثمار: (التمر والزبيب)، وذهب الحنفية إلى وجوب الزكاة في كل ما يخرج من الأرض.</li><li>أن يبلغ النصاب، وهو خمسة أوسق، كما جاء في الحديث: «لَيْسَ فِيما دُونَ خَمْسَةِ أوْسُقٍ صَدَقَةٌ» والخمسة أوسق تساوي 653 كجم تقريبًا، وبالكيل 50 كيلة مصرية.</li></ol>
+					فإذا كان ما زرع من ضمن الأصناف التي تجب فيها الزكاة، وبلغ النصاب السابق ذكره فقد وجبت فيها الزكاة.
+					ومقدارها إما أن يكون:
+			<ol><li> العشر كاملًا؛ وذلك إذا كنت تعتمد في ري الأرض على المطر أو السقي المباشر من المصارف بلا تكلفة</li><li> وإما نصف العشر؛ وذلك إن كنت تسقي بآلة للسَّقْي، ولا يخصم من المحصول التكاليف أو النفقات قبل إخراج الزكاة، وإذا لم يبلغ المحصول نصاب الزكاة فلا تجب فيه الزكاة.</li></ol>
+		</div>
+		</div>
+    </div>
+	
+	<div class="page fadeout" id="aboutTjara">
+		<h2>زكاة التجارة <img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"><img style="position:absolute;right:2px;" onclick="window.location='#home'" src="img/home.png"></h2>
+		<div class="container">
+		<div class="text"><p>على التجار زكاة تسمى بزكاة (عروض التجارة)، وعروض التجارة هي: كل ما أعد للتجارة كائنة ما كانت؛ سواء من جنسٍ تجب فيه زكاة العين؛ كالإبل والغنم والبقر، أم لا؛ كالثياب والحمير والبغال.</p><p> إنّ مقدار الزكاة الواجبة في عروض التجارة هو ربع العشر من القيمة الكلية، وهذا اتفاق المذاهب الأربعة الحنفية، الشافعيّة، المالكيّة، والحنابلة وأجمعَ عليه، ويتم ذلك عن طريق تقويم النقد الذي تساويه البضائع، ونصاب عروض التجارة كنصاب المال النقدي (85 جرام من الذهب عيار 21 او قيمتهم النقدية)، ومقدار الزكاة هو ذاته وذلك بإجماع الفقهاء، ويتم حساب قيمة الزكاة عن طريق المعادلة التالية وهي معادلة مأثورة من السلف</p>
+			<p>الشروط <ul><li>يقوم التاجر في نهاية العام الهجري بجرد البضائع التي لديه وتقديرها</li><li>يقوم بخصم الديون التي على البضائع من قيمة البضائع الموجودة.</li><li>يقوم بإضافة الديون المستحقة للمحل على المتعاملين معه.</li><li>والصافي وهو رأس المال العامل إن بلغ النصاب (وهو ما يعادل 85 جرامًا من الذهب عيار 21)، وكان خاليًا من الدين، وفاضلًا عن الحاجة الأصلية وجب إخراج ما نسبته (2.5%) من إجمالي ثمن البضائع، وإذا كان للتاجر مال مدخر فإنه يضاف إلى هذا الإجمالي ويزكيان معًا.</li></ul></p>
+			<p> مقدار الزكاة=(النقد+قيمة السِّلَع+الدُّيون المرجوَّة-ما عليه من الدُّيونِ)×2.5%، أو =(النقد+قيمة السِّلع+الدُّيون المرجوَّة-ما عليه من الديون)÷40.</p>
+			<p style="text-align:center;color:red;">المهم هو أن كل مال "ينمو او قابل للنماء" يجب عنه الزكاة</p>
+			<ul><li> زكاة الأرض المعدة للتجارة تعرف عروض التجارة بأنها كُل ما أعد للبيع والشراء بهدف الربح</li><li> وإذا كانت الأرض معدة للبيع ونوى صاحبها ذلك، فتجب عليه زكاتها وذلك عن طريق معرفة قية الأرض التي بلغت النصاب وإخراج الزكاة عنها في رأس الحول، وقيمة الزكاة في كل عام تعتمد على قيمة الأرض في هذا العام، ويجوز للمسلم المعسر أن يؤجل إخراج الزكاة إلى حين بيع الأرض، ثمّ يخرج الزكاة من قيمة البيع، وإذا اشترى المسلم الأرض ولم يجزم بعد إذا أراد بيعها أو السكن عليها وكان متردداً في أمره بين التجارة فيها أو استخدامها بغير ذلك فلا زكاة عليه</li><li> وإذا كان استثمار الأرض عن طريق تأجير المباني التي عليها، فالزكاة تجب في قيمة الأجرة من المباني وليسَ في الأرض أو المباني نفسها. وإذا كان الهدف بيع المباني المبنية على الأرض، فيتم تقويم الأرض والمباني في نهاية كلّ عام حتى لو لم يكتمل البناء وإخراج زكاة مقدارها 2.5% </li></ul>
+			<p style="text-align:center;color:red;">إخراج زكاة عروض التجارة من البضاعة اختلف اهل العلم في جواز إخراج الزكاة من عروض التجارة نفسها وبدا رأيان الأول يجيزها والاخر يجيز اخراجها نقداً والله اعلم</p>
+		</div>
+		</div>
+    </div>
+	<div class="page fadeout" id="aboutMal">
+		<h2>زكاة المال <img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"><img style="position:absolute;right:2px;" onclick="window.location='#home'" src="img/home.png"></h2>
+		<div class="container">
+		<div class="text"><center style="color:blue;">الزكاة فى الأصل هي 2.5% تؤخذ من المال المدخر اذا حال عليه الحول وبلغ نصاب الزكاة والمقدر ب 85 جرام من الذهب عيار 21 او قيمته النقدية </center>الأموال المودَعة بالبنوك والتي تُدِرُّ عائدًا بمعدَّلٍ ثابت فيها الزكاة إذا حال عليها الحول القمري، ومقدار الزكاة الواجبة فيها هو ربع العشر أي: اثنان ونصف بالمائة من أصل المال.
+						وأمَّا ما يقال من أن الزكاة تُستَحَقُّ على العوائد فقط: فهذا اجتهاد لبعض أهل العلم مبناه على اعتبار المال المودع في البنك كالأرض التي تجب الزكاة فيما تخرجه من نتاجها، بجامع أن كلًّا منهما أصل ثابت يُدِرُّ دخلًا يتعيَّش منه صاحبه، ويضره الانتقاص من أصله، وليس ذلك عامًّا في كل أنواع الاستثمار؛ لأن من الاستثمار ما لا زكاة فيه أصلًا بالغًا ما بلغ الدخل أو العائد فيه، وحينئذٍ فالأصل أن الزكاة تخرج ربع عشر المال المودَع، فإن كان ذلك المال بالنسبة لصاحبه كالأرض بالنسبة لصاحبها في تَعَيُّشِه منها وتَضَرُّرِه من انتقاص أصلها فله أن يكتفي بإخراج عشر أرباحه الناتجة منه، ويكون ذلك مجزئًا له عن زكاة هذا المال المودَع، وذلك على رأي بعض أهل العلم.
+
+			<center  style="color:blue;">
+			وطبقاً لقول أمين الفتوى بدار الافتاء المصرية الشيخ احمد وسام:<br>
+			فتجب الزكاة في الأصل بنسبة 2.5 %، وفي الأرباح أيضًا إذا كانت تأتي قبل الحول ولا تنفق حتى يحول الحول،اما  إذا تم إنفاق الأرباح أولًا بأول فلا زكاة فيها .<br>
+			هناك طريقة أخرى لإخراج زكاة المال ونحتاج إليها عندما تكون الأرباح هي مصدر المعيشة أو تُساعد إلى جانب الراتب على النفقة في المعيشة، ففي هذه الحالة نقوم بإخراج الزكاة بنسبة 10 % على الأرباح فقط وليس على أصل المال المودع بالبنك.
+			<br>والله سبحانه وتعالى أعلم.
+			</center>	
+		</div>
+		</div>
+    </div>
+
+	<div class="page fadeout" id="aboutFitr">
+		<h2>زكاة الفطر <img style="position:absolute;left:2px;" onclick="desert.goBack()" src="img/bk.png"><img style="position:absolute;right:2px;" onclick="window.location='#home'" src="img/home.png"></h2>
+		<div class="container">
+		<div class="text">«فَرَضَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ <img src="img/salat.png" alt="صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ"> زَكَاةَ الْفِطْرِ طُهْرَةً لِلصَّائِمِ مِنْ اللَّغْوِ وَالرَّفَثِ وَطُعْمَةً لِلْمَسَاكِينِ مَنْ أَدَّاهَا قَبْلَ الصَّلاةِ فَهِيَ زَكَاةٌ مَقْبُولَةٌ وَمَنْ أَدَّاهَا بَعْدَ الصَّلاةِ فَهِيَ صَدَقَةٌ مِنْ الصَّدَقَاتِ»
+		 <br>«فرض رسول الله زكاة الفطر من رمضان، على كل نفس من المسلمين: حرٍّ أو عبدٍ، أو رجلٍ أو امرأةٍ، صغيرٍ أو كبيرٍ»
+		 <br>فزكاة الفطر هى فريضة على كل مسلم ومسلمة ، فيجب على ولى أمر الأسرة اخراج زكاة الفطر عن كل شخص يعوله  حتى الجنين ببطن أمه يجب اخراج الزكاة عنه.
+		 <br>مقدار الواجب في زكاة الفطر هو أن يخرج عن الفرد صاعا من تمر، أو من زبيب، أو صاعا من قمح أو من شعير أو من أرز، أو صاعا من أقط، ونحو ذلك مما يعتبر قوتا يتقوت به، ويجزئ الدقيق إن كان يساوي الحب في الوزن، فإن لم يجد أحد هذه الأنواع أخرج ما يقوم مقامه من كل ما يصلح قوتًا من ذرة أو أرز أو عدس أو نحوه ذلك،
+		 <br>وَلَا تَيَمَّمُوا الْخَبِيثَ مِنْهُ تُنفِقُون<br>
+		 ومقدار الصاع ينقص عن 3 كجم، بنسب متفاوتة؛ لتفاوت التقديرات <br>ويرى الحسن البصري وعطاء وعمر بن عبد العزيز وسفيان الثوري وأبي حنيفة وأصحابه بجواز إخراجها نقدًا.
+		 <br>
+		 تخرج زكاة الفطر من أول يوم رمضان وحتى قبل صلاة عيد الفطر ،ويحرم تأخيرها عن يوم العيد بلا عذر. وإذا فات يوم العيد لزمه القضاء وفى هذه الحالة تخرج صدقة.
+		 <br><br>
+		 </div>
+		 </div>
+    </div>
+	
+	<div id='popup' class="fadeout"><header style="height:50px;background:silver;width:100%;margin:-1px auto; padding:auto;"></header><content style="padding:auto;margin:auto;overflow:auto;"></content></div>
+	<script>
+		
+		
+	</script>	
+        <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+    </body>
+	
+</html>

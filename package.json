@@ -1,0 +1,39 @@
+{
+  "name": "com.citydesert.zakat",
+  "displayName": "HelloCordova",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-android": "^8.1.0",
+    "cordova-plugin-dialogs": "^2.0.2",
+    "cordova-plugin-screen-locker": "^0.2.2",
+    "cordova-promise-polyfill": "0.0.2",
+    "cordova-windows": "^7.0.1"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-screen-locker": {},
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-local-notification": {},
+      "cordova-plugin-fullscreen": {}
+    },
+    "platforms": [
+      "android",
+      "windows"
+    ]
+  },
+  "devDependencies": {
+    "cordova-plugin-badge": "^0.8.8",
+    "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-local-notification": "^0.9.0-beta.2",
+  }
+}

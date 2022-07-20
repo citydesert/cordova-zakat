@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.citydesert.zakat" version="1.0.0" android-versionCode="100" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Zakat Calculator</name>
+    <description>Calculate your fitr zakat,Money zakat and trade zakat with Islamic Egyptian methods</description>
+    <author email="citydesert.mailing@mail.ru" href="https://play.google.com/store/apps/dev?id=7891920535007923434" message="this is my console account linked to my email citydesert.mailing@mail.ru">سرالصحراء</author>
+	<preference name="Orientation" value="portrait" />
+	<preference name="Fullscreen" value="true" />
+	<preference name="BackgroundColor" value="0xffeeeeee"/>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+		<icon src="www/img/logo.png" width="150" height="150" density="xxhdpi" />
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
